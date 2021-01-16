@@ -1,0 +1,19 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: AWSChaos
+metadata:
+  name: stop-instance
+  namespace: chaos-testing
+spec:
+  action: stop
+  service: EC2
+  resource: instance
+  config:
+    region: "us-east-1"
+  selector:
+    filters:
+    - name: "vpc-id"
+      values:
+      - "xxx"
+
+
+
